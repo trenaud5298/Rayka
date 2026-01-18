@@ -1,0 +1,34 @@
+# CLion project files
+.idea/
+*.iml
+cmake-build-*/
+cmake-build-*/_CPack_Packages/
+
+# Build artifacts (And local install)
+build/
+Debug/
+Release/
+install/
+*.o
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Generated cmake files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Optional docs
+*.pdf
+*.zip

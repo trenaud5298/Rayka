@@ -1,0 +1,45 @@
+@PACKAGE_INIT@
+
+if(NOT DEFINED RAYKA_PACKAGE_CONFIG_INCLUDED)
+    set(RAYKA_PACKAGE_CONFIG_INCLUDED TRUE)
+
+    # Get Core Target (Required)
+    set_and_check(Rayka_CORE_TARGETS "${CMAKE_CURRENT_LIST_DIR}/RaykaCoreTargets.cmake")
+    include("${Rayka_CORE_TARGETS}")
+    set(Rayka_FOUND TRUE)
+
+    # Optionally include backend exports if they exist
+    set(Rayka_AVAILABLE_COMPONENTS "")
+    # CUDA
+    if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/RaykaCUDATargets.cmake")
+        include("${CMAKE_CURRENT_LIST_DIR}/RaykaCUDATargets.cmake")
+        list(APPEND Rayka_AVAILABLE_COMPONENTS "CUDA")
+        set(Rayka_CUDA_FOUND TRUE)
+    else()
+        set(Rayka_CUDA_FOUND FALSE)
+    endif()
+
+    # OpenGL
+    if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/RaykaOpenGLTargets.cmake")
+        include("${CMAKE_CURRENT_LIST_DIR}/RaykaOpenGLTargets.cmake")
+        list(APPEND Rayka_AVAILABLE_COMPONENTS "OPENGL")
+        set(Rayka_OPENGL_FOUND TRUE)
+    else()
+        set(Rayka_OPENGL_FOUND FALSE)
+    endif()
+
+    # Vulkan
+    if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/RaykaVulkanTargets.cmake")
+        include("${CMAKE_CURRENT_LIST_DIR}/RaykaVulkanTargets.cmake")
+        list(APPEND Rayka_AVAILABLE_COMPONENTS "VULKAN")
+        set(Rayka_VULKAN_FOUND TRUE)
+    else()
+        set(Rayka_VULKAN_FOUND FALSE)
+    endif()
+
+    # Cache Available Components
+    set(Rayka_AVAILABLE_COMPONENTS "${Rayka_AVAILABLE_COMPONENTS}" CACHE INTERNAL "Available Rayka components")
+
+    # Check Required Components
+    check_required_components(Rayka)
+endif()
