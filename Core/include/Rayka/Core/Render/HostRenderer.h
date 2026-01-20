@@ -6,7 +6,7 @@
 
 // Rayka Includes
 #include <Rayka/Core/Export.h>
-#include <Rayka/Core/Renderer/Renderer.h>
+#include <Rayka/Core/Render/Renderer.h>
 
 // C++ Includes
 

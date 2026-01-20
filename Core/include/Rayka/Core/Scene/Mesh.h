@@ -21,16 +21,6 @@ namespace Rayka {
         std::vector<Vertex> vertices;
         std::vector<std::uint32_t> indices;
     };
-
-    struct RAYKA_CORE_EXPORT Transform {
-        float position[3] {0.0f, 0.0f, 0.0f};
-        float scale[3]    {1.0f, 1.0f, 1.0f};
-    };
-
-    struct RAYKA_CORE_EXPORT Instance {
-        std::size_t meshIndex;
-        Transform transform;
-    };
 }
 
 #endif

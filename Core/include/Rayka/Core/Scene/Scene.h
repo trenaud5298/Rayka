@@ -7,6 +7,7 @@
 // Rayka Includes
 #include <Rayka/Core/Export.h>
 #include <Rayka/Core/Scene/Mesh.h>
+#include <Rayka/Core/Scene/Instance.h>
 
 // C++ Includes
 #include <vector>

@@ -5,8 +5,9 @@
 #define RAYKA_CORE_CORE_H
 
 #include <Rayka/Core/Scene/Mesh.h>
+#include <Rayka/Core/Scene/Instance.h>
 #include <Rayka/Core/Scene/Scene.h>
-#include <Rayka/Core/Renderer/Renderer.h>
-#include <Rayka/Core/Renderer/HostRenderer.h>
+#include <Rayka/Core/Render/Renderer.h>
+#include <Rayka/Core/Render/HostRenderer.h>
 
 #endif

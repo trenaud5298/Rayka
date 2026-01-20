@@ -2,7 +2,7 @@
 // Copyright (c) 2026, Tyler Renaud
 
 // Rayka Includes
-#include <Rayka/Core/Renderer/HostRenderer.h>
+#include <Rayka/Core/Render/HostRenderer.h>
 #include <Rayka/Core/Scene/Scene.h>
 
 // C++ Includes
